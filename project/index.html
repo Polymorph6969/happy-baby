@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<!-- 
+   https://www.youtube.com/watch?v=-u7cUz38eEg
+-->
+
+<head>
+  <title> Website for the love of my life </title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik+Burned&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="cursor.css">
+
+</head>
+<style>
+  #playButton {
+    display: flex;
+    align-items: flex-end;
+    position: fixed;
+    width: 5%;
+    bottom: 55px;
+    left: 1650px;
+    border-radius: 1px;
+    background-color: rgba(255, 0, 221, 0);
+    font-size: 18px;
+    border: none;
+    color: #fff;
+    cursor: url('hover-cursor2.png') 16 16, auto;
+    transition: all 0.2s ease;
+  }
+
+  #playButton:hover {
+    color: #45a049;
+    transform: scale(0.96);
+  }
+  .lyrics{
+    display: flex;
+    align-items: flex-end;
+    position: fixed;
+    width: 5%;
+    bottom: 590px;
+    left: 1650px;
+    border-radius: 1px;
+    background-color: rgba(255, 0, 221, 0);
+    font-size: 22px;
+    border: none;
+    color: #ffffff;
+    cursor: url('hover-cursor2.png') 16 16, auto;
+    animation: fadeIn 3s ease-in-out;
+    
+  }
+  .lyrics:hover {
+    transform: scale(0.96);
+  }
+  @keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1; 
+    }
+  }
+</style>
+<body>
+
+  <div class="default-cursor">
+    <div class="banner">
+      <div class="header">
+        <div class="container">
+          <h1>
+            <div class="button-container">
+              <button class="button">I love her 🥹</button>
+              <script>
+                const button = document.querySelector(".button");
+                button.addEventListener("click", (e) => {
+                  e.preventDefault;
+                  button.classList.add("animate");
+                  setTimeout(() => {
+                    button.classList.remove("animate");
+                  }, 600);
+                });
+              </script>
+            </div>
+            <button id="playButton">Play Song</button>
+            <audio id="myAudio" style="display: none;" loop>
+              <source src="Pix.mp3" type="audio/mpeg">
+              Your browser does not support the audio element.
+            </audio>
+            This is a website I created for my girlfriend
+            <a class="a2"><span class="no-glow">✨</span> Pixie <span class="no-glow">✨</span></a>
+          </h1>
+          <h2>
+            <a class="a" href="pixie\pixie.html"> She 😌</span></a>
+          </h2>
+
+        </div>
+        <button class="lyrics"; id="toggleButton"><i>Lyrics</i></button>
+         <div id="imageContainer">
+        <img class="image" src="text1.jpg" draggable="false">
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    var audio = document.getElementById('myAudio');
+    var playButton = document.getElementById('playButton');
+  
+    playButton.addEventListener('click', function() {
+      if (audio.paused) {
+      audio.play();
+    } else {
+      audio.pause();
+    }
+    });
+  </script>
+</body>
+<script src="cursor.js"> </script>
+<script>
+  window.addEventListener('DOMContentLoaded', function() {
+    var imageContainer = document.getElementById('imageContainer');
+    imageContainer.style.display = 'none'; // Hide the image initially
+  });
+
+  document.getElementById('toggleButton').addEventListener('click', function() {
+    var imageContainer = document.getElementById('imageContainer');
+    if (imageContainer.style.display === 'none' || imageContainer.style.display === '') {
+      imageContainer.style.display = 'block';
+    } else {
+      imageContainer.style.display = 'none';
+    }
+  });
+</script>
+</html>

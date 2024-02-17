@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik+Burned&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap">
+  <link rel="stylesheet" href="image-scroll.css">
+  <link rel="stylesheet" href="cursorp.css">
+
+
+
+</head>
+<style>
+  #playButton {
+    position: fixed;
+    bottom: 55px; 
+    right: 99px; 
+    border-radius: 1px;
+    background-color: rgba(255, 0, 221, 0);
+    font-size: 18px;
+    border: none;
+    color: #fff;
+    cursor: url('hover-cursor2.png') 16 16, auto;
+    transition: all 0.2s ease;
+    z-index: 10000;
+  }
+
+  #playButton:hover {
+    color: #45a049;
+    transform: scale(0.96);
+  }
+  .lyrics{
+    display: flex;
+    align-items: flex-end;
+    position: fixed;
+    width: 5%;
+    bottom: 750px;
+    left: 1650px;
+    border-radius: 1px;
+    background-color: rgba(255, 0, 221, 0);
+    font-size: 22px;
+    border: none;
+    color: #ffffff;
+    cursor: url('hover-cursor2.png') 16 16, auto;
+    
+  }
+  .lyrics:hover {
+    transform: scale(0.96);
+  }
+</style>
+
+
+<body>
+  <div class="default-cursor">
+    <div class="banner">
+      <audio id="myAudio" style="display: none;" loop>
+        <source src="My-Girl-Pixie.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+      <button id="playButton">Play Song</button>
+      <div id="image-track" data-mouse-down-at="0" data-prev-percentage="0">
+        <div class="image-container">
+          <img class="image" src="16.jpg" draggable="false">
+          <div class="image-text">Pixie is the cutest of them all!</div>
+        </div>
+        <div class="image-container">
+          <img class="image" src="5.jpg" draggable="false">
+          <div class="image-text2">Pixie is the biggest Gangsta! The only person that i truly fear! </div>
+        </div>
+        <div class="image-container">
+          <img class="image" src="15.jpeg" draggable="false">
+          <div class="image-text3">Pixie has the best taste in food!</div>
+        </div>
+        <div class="image-container">
+          <img class="image" src="4.jpg" draggable="false">
+          <div class="image-text4">Pixie loves to dress up!</div>
+        </div>
+        <div class="image-container">
+          <img class="image" src="2.jpg" draggable="false">
+          <div class="image-text5">Pixie likes to be silly! 🤪</div>
+        </div>
+        <div class="image-container">
+          <img class="image" src="11.jpg" draggable="false">
+          <div class="image-text6">Pixie is the most beautifull girl in the world!</div>
+          <div class="image-text65">On the inside and on the outside!</div>
+        </div>
+        <div class="image-container">
+          <img class="image" src="yeee2.jpg" draggable="false">
+          <div class="image-text7">Pixie is my biggest motivator!</div>
+        </div>
+        <div class="image-container">
+          <img class="image" src="yeee.jpg" draggable="false">
+          <div class="image-text8">Pixie's smile is literally the only thing i care about in this world and i love it!
+          </div>
+        </div>
+        <div class="image-container">
+          <img class="image" src="1.jpg" draggable="false">
+          <div class="image-text9">Pixie's huggies bring me peace and make me shleepy ❤️
+          </div>
+        </div>
+        <div class="image-container">
+          <img class="image" src="8.jpg" draggable="false">
+          <div class="image-text12">Pixie achieves anything she puts her mind to! No Excuses!
+          </div>
+        </div>
+        <div class="image-container">
+          <img class="image" src="3.jpg" draggable="false">
+          <div class="image-text10">Pixie's baking adventures are always exciting and TASTY 😋
+          </div>
+        </div>
+        <div class="image-container">
+          <img class="image" src="7.jpg" draggable="false">
+          <div class="image-text11">Pixie is 6 years old.
+          </div>
+        </div>
+
+        <div class="image-container">
+          <img class="image" src="12.jpg" draggable="false">
+          <div class="image-text13">But also respected woman!
+          </div>
+        </div>
+        <div class="image-container">
+          <img class="image" src="13.jpg" draggable="false">
+          <div class="image-text14">Pixie 💞 Poly
+          </div>
+        </div>
+      </div>
+    </div>
+    <button class="lyrics"; id="toggleButton"><i>Lyrics</i></button>
+     <div id="imageContainer2">
+    <img class="image2" src="text2.jpg" draggable="false">
+    </div>
+    </div>
+    <a class="meta-link" href="..\index.html">
+      <i class="fa-solid fa-link"></i>
+      <span>Back</span>
+    </a>
+  </div>
+  <script>
+document.addEventListener('DOMContentLoaded', function() {
+  var playButton = document.getElementById('playButton');
+  var audio = document.getElementById('myAudio');
+
+  if (playButton && audio) {
+    playButton.addEventListener('click', function() {
+      if (audio.paused) {
+        audio.play();
+      } else {
+        audio.pause();
+      }
+    });
+  } else {
+    console.error('Either playButton or audio element not found.');
+  }
+});
+
+</script>
+
+<script src="image-track.js"></script>
+<script src="cursorp.js"> </script>
+
+<script>
+  window.addEventListener('DOMContentLoaded', function() {
+    var imageContainer = document.getElementById('imageContainer2');
+    imageContainer.style.display = 'none'; // Hide the image initially
+  });
+
+  document.getElementById('toggleButton').addEventListener('click', function() {
+    var imageContainer = document.getElementById('imageContainer2');
+    if (imageContainer.style.display === 'none' || imageContainer.style.display === '') {
+      imageContainer.style.display = 'block';
+    } else {
+      imageContainer.style.display = 'none';
+    }
+  });
+</script>
+</body>
+
+
+
+</html>

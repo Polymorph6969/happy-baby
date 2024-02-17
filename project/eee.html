@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Audio Player</title>
+  <style>
+    /* Add your CSS styles here */
+    #playButton {
+      background-color: #4CAF50;
+      border: none;
+      color: white;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      cursor: pointer;
+      border-radius: 10px;
+    }
+
+    #playButton:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+
+<h1>The audio autoplay attribute</h1>
+
+<p>Click the play button to start playing the audio:</p>
+
+<button id="playButton">Play</button>
+<audio id="myAudio" style="display: none;" loop>
+  <source src="My-Girl-Pixie.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+
+<script>
+  var audio = document.getElementById('myAudio');
+  var playButton = document.getElementById('playButton');
+
+  playButton.addEventListener('click', function() {
+    if (audio.paused) {
+      audio.play();
+    } else {
+      audio.pause();
+    }
+  });
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+<style>
+    #playButton {
+      align-items: center;
+      display: flex;
+      position: fixed;
+      padding: 15px 25px;
+      position: fixed;
+      border-radius: 1px;
+      background-color: rgba(255, 0, 221, 0);
+      font-size: 18px;
+      border: none;
+      color: #fff;
+      cursor: url('hover-cursor2.png') 16 16, auto;
+      transition: all 0.2s ease;
+      z-index: 10000;
+    }
+  
+    #playButton:hover {
+      color: #45a049;
+      transform: scale(0.96);
+    }
+  </style>
+
